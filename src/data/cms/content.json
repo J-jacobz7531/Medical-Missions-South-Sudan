@@ -1,0 +1,220 @@
+{
+  "siteSettings": {
+    "siteName": "Medical Mission",
+    "tagline": "Healing Nations",
+    "description": "A Christian Humanitarian Non-Governmental Organisation bringing hope and healing to the most vulnerable in South Sudan and East Africa.",
+    "contact": {
+      "email": "mmsouthsudan@gmail.com",
+      "phone": "+211929502970",
+      "address": {
+        "street": "Palakal, Junction-Kapoeta town Rd",
+        "city": "Juba",
+        "state": "Eastern Equatoria State",
+        "country": "South Sudan"
+      }
+    },
+    "socialMedia": {
+      "facebook": "",
+      "twitter": "",
+      "instagram": "",
+      "linkedin": ""
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Make a Difference Today",
+        "subtitle": "Your donation directly supports life-changing healthcare programs in South Sudan's most underserved communities.",
+        "ctaButtons": [
+          {
+            "text": "Donate Now",
+            "link": "/donate",
+            "type": "primary"
+          },
+          {
+            "text": "Learn More",
+            "link": "/about",
+            "type": "secondary"
+          }
+        ]
+      },
+      "stats": [
+        {
+          "value": "50,000+",
+          "label": "Lives Impacted"
+        },
+        {
+          "value": "200+",
+          "label": "Communities Served"
+        },
+        {
+          "value": "95%",
+          "label": "Donation Efficiency"
+        }
+      ]
+    },
+    "about": {
+      "hero": {
+        "title": "About Medical Mission",
+        "subtitle": "A Christian Humanitarian Non-Governmental Organisation dedicated to bringing hope and healing to the most vulnerable in South Sudan and East Africa, transforming lives holistically through healthcare and humanitarian aid."
+      },
+      "mission": "Transform unreached sub-Saharan East African communities via subsidised medical services, mobile surgery, training, and education.",
+      "vision": "To bring hope and healing to the most vulnerable in South Sudan and East Africa, transforming lives holistically through healthcare and humanitarian aid, promoting human dignity.",
+      "story": [
+        "Medical Mission was founded in 2020 by South Sudanese medical students who recognized the significant challenges in providing adequate medical services in South Sudan, especially in rural areas.",
+        "The Greater Kapoeta region lacked functioning hospitals and had severely limited healthcare access. Existing dispensaries struggled with complex cases, and many individuals, including Toposa families, lacked proper diagnosis and treatment.",
+        "Officially registered on September 27, 2021, under the Republic of South Sudan Relief and Rehabilitation Commission (Registration No. 3871), we began our mission to transform unreached communities through comprehensive healthcare and humanitarian services.",
+        "Today, under the leadership of CEO and Founder Lobai Thomas Lowi, we operate as a national and community-based organization, working hand-in-hand with local communities to address root causes of health challenges and build sustainable solutions."
+      ],
+      "values": [
+        {
+          "title": "Love and Faith",
+          "description": "Christian principles, compassion, and empathy guide all our interactions and services."
+        },
+        {
+          "title": "Integrity & Professionalism",
+          "description": "Maintaining high standards, accountability, and ethics in all our operations."
+        },
+        {
+          "title": "Mutual Respect",
+          "description": "Recognizing the dignity and potential of all individuals we serve and work with."
+        },
+        {
+          "title": "Solidarity",
+          "description": "Standing with vulnerable communities, especially women, children, and the elderly."
+        },
+        {
+          "title": "Equality",
+          "description": "Respecting all races, ethnicities, religions, and promoting inclusivity."
+        },
+        {
+          "title": "Partnership",
+          "description": "Collaboration with like-minded entities, through egalitarian power structures."
+        }
+      ],
+      "team": [
+        {
+          "name": "Lobai Thomas Lowi",
+          "position": "Chief Executive Officer & Founder",
+          "description": "Visionary leader guiding Medical Mission's strategic direction and day-to-day management, committed to healthcare transformation in South Sudan.",
+          "image": "team-lobai.jpg"
+        },
+        {
+          "name": "Timothy Hendra",
+          "position": "Managing Director",
+          "description": "Leading the management team and overseeing operational excellence across all program areas and functional departments.",
+          "image": "team-timothy.jpg"
+        },
+        {
+          "name": "Louise Hendra",
+          "position": "Board Chair",
+          "description": "Providing overall guidance, direction, and oversight through the Board of Directors to ensure organizational excellence.",
+          "image": "team-louise.jpg"
+        },
+        {
+          "name": "Lawrence Alabo",
+          "position": "Secretary & Legal Specialist",
+          "description": "Overseeing legal compliance, agreements, and documentation while ensuring organizational operations align with regulatory requirements.",
+          "image": "team-lawrence.jpg"
+        }
+      ]
+    },
+    "gallery": {
+      "hero": {
+        "title": "Impact Stories",
+        "subtitle": "See how your donations transform lives across South Sudan. Every contribution creates lasting change, bringing hope, healing, and opportunity to those who need it most."
+      },
+      "impactStories": [
+        {
+          "id": "healthcare-1",
+          "title": "Transforming Healthcare Access",
+          "description": "Mobile clinics bring essential medical services directly to remote communities",
+          "impact": "Over 15,000 patients treated in underserved areas",
+          "category": "healthcare",
+          "image": "impact-healthcare-1.jpg",
+          "stats": [
+            {
+              "label": "Patients Served",
+              "value": "15,000+"
+            },
+            {
+              "label": "Villages Reached",
+              "value": "120"
+            },
+            {
+              "label": "Medical Procedures",
+              "value": "8,500"
+            }
+          ]
+        },
+        {
+          "id": "education-1",
+          "title": "Health Education Programs",
+          "description": "Community workshops teaching preventive care and hygiene practices",
+          "impact": "Trained 5,000+ community health advocates",
+          "category": "education",
+          "image": "impact-education-1.jpg",
+          "stats": [
+            {
+              "label": "People Trained",
+              "value": "5,000+"
+            },
+            {
+              "label": "Workshops Held",
+              "value": "200"
+            },
+            {
+              "label": "Health Topics Covered",
+              "value": "25"
+            }
+          ]
+        },
+        {
+          "id": "healthcare-2",
+          "title": "Maternal & Child Health",
+          "description": "Specialized care for mothers and children ensuring healthy futures",
+          "impact": "Reduced infant mortality by 40% in target areas",
+          "category": "healthcare",
+          "image": "impact-healthcare-2.jpg",
+          "stats": [
+            {
+              "label": "Safe Deliveries",
+              "value": "2,800"
+            },
+            {
+              "label": "Vaccination Rate",
+              "value": "85%"
+            },
+            {
+              "label": "Mortality Reduction",
+              "value": "40%"
+            }
+          ]
+        },
+        {
+          "id": "community-1",
+          "title": "Community Partnerships",
+          "description": "Building lasting relationships with local leaders and communities",
+          "impact": "Established healthcare networks in 50+ communities",
+          "category": "community",
+          "image": "impact-community-1.jpg",
+          "stats": [
+            {
+              "label": "Communities",
+              "value": "50+"
+            },
+            {
+              "label": "Local Partners",
+              "value": "180"
+            },
+            {
+              "label": "Healthcare Networks",
+              "value": "25"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "lastUpdated": "2025-01-11T17:07:36.000Z"
+}
