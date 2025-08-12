@@ -68,11 +68,6 @@ const DonatePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const finalAmount = amount || customAmount;
-    console.log('Donation submitted:', {
-      type: donationType,
-      amount: finalAmount,
-      paymentMethod: paymentMethod
-    });
     alert(`Thank you for your ${donationType} donation of $${finalAmount} via ${paymentMethod}!`);
   };
 

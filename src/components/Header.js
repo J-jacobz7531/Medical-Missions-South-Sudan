@@ -100,12 +100,7 @@ const Header = () => {
             >
               Donate Now
             </Link>
-            <Link 
-              to="/login" 
-              className="border border-white/50 text-white px-5 py-2 rounded-md text-xs font-medium uppercase tracking-wider hover:bg-white/10 transition-colors duration-300"
-            >
-              Sign In
-            </Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -180,13 +175,7 @@ const Header = () => {
                 >
                   Donate Now
                 </Link>
-                <Link 
-                  to="/login" 
-                  className="block w-full border border-white/50 text-white px-3 py-2 rounded-md text-sm font-medium uppercase text-center hover:bg-white/10"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Sign In
-                </Link>
+
               </div>
             </div>
           </div>

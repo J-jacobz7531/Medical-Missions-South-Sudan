@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '../components/ui/carousel';
-import { Users, Heart, GraduationCap, Briefcase, Stethoscope, Shield, Camera } from 'lucide-react';
+import { Heart, GraduationCap, Briefcase, Stethoscope, Users, BookOpen } from 'lucide-react';
+import { ImagesSlider } from '../components/ui/images-slider';
+import { InteractiveCarousel } from '../components/ui/interactive-carousel';
+
 
 import placeholderImage1 from '../assets/images/background.jpg';
 import placeholderImage2 from '../assets/images/background.jpg';
@@ -14,6 +15,73 @@ import placeholderImage5 from '../assets/images/background.jpg';
 import placeholderImage6 from '../assets/images/background.jpg';
 
 const AchievementsPage = () => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  // Content data for each slide
+  const slideContent = [
+    {
+      title: "Mobile Clinics",
+      subtitle: "Reaching Remote Communities",
+      description: "Bringing essential healthcare directly to underserved villages across South Sudan",
+      icon: Stethoscope,
+      color: "green-400",
+      stats: "300+ patients served",
+      details: [
+        "Implemented 2 mobile clinics (April & August)",
+        "Treated over 300 patients",
+        "Provided treatments, vaccinations, and health check-ups",
+        "Reached remote and underserved areas"
+      ]
+    },
+    {
+      title: "Maternal Services",
+      subtitle: "Supporting Mothers & Families",
+      description: "Comprehensive maternal health programs ensuring safe pregnancies and births",
+      icon: Heart,
+      color: "pink-400",
+      stats: "50+ mothers supported",
+      details: [
+        "Established prenatal and postnatal care programs",
+        "Trained women on menstrual and general hygiene",
+        "Distributed soaps for health promotion",
+        "Trained 20+ traditional birth attendants",
+        "Reduced maternal and infant mortality rates"
+      ]
+    },
+    {
+      title: "Health Education",
+      subtitle: "Empowering Through Knowledge",
+      description: "Comprehensive health education programs in schools and communities",
+      icon: GraduationCap,
+      color: "blue-400",
+      stats: "40+ students educated",
+      details: [
+        "Mental health education curriculum",
+        "Trained 40+ students on STD prevention",
+        "Early pregnancy education",
+        "Provided sanitary pads to girls"
+      ]
+    },
+    {
+      title: "Women's Empowerment",
+      subtitle: "Building Economic Independence",
+      description: "Empowering women through business skills and economic opportunities",
+      icon: Briefcase,
+      color: "orange-400",
+      stats: "20+ women trained",
+      details: [
+        "Trained 20+ women in business skills",
+        "Liquid soap production training",
+        "Business management & financial literacy",
+        "Enhanced economic independence"
+      ]
+    }
+  ];
+
+  const handleSlideChange = (index) => {
+    setCurrentSlide(index);
+  };
+
   // Animation variants
   const headingVariants = {
     initial: { opacity: 0, y: 20 },
@@ -58,20 +126,18 @@ const AchievementsPage = () => {
       } 
     }
   };
-  const galleryImages = [
-    { src: placeholderImage1, alt: "Medical professional providing healthcare services to community members", caption: "Mobile clinic services reaching remote communities" },
-    { src: placeholderImage2, alt: "Healthcare worker conducting eye examination", caption: "Comprehensive health check-ups and treatments" },
-    { src: placeholderImage3, alt: "Medical consultation in rural setting", caption: "Providing essential medical care to underserved areas" },
-    { src: placeholderImage4, alt: "Community members receiving healthcare services", caption: "Maternal and child health support programs" },
-    { src: placeholderImage5, alt: "Community education session with villagers", caption: "Health education and awareness programs" },
-    { src: placeholderImage6, alt: "Women's economic empowerment initiative", caption: "Supporting women's economic independence" }
+  // Images for the slider
+  const sliderImages = [
+    placeholderImage1,
+    placeholderImage2,
+    placeholderImage3,
+    placeholderImage4
   ];
 
   return (
     <div className="min-h-screen">
-      <div>
-        {/* Hero Section with Blurred Background */}
-        <section className="relative bg-gradient-to-br from-[#65a8b0] to-[#d1dfe0] py-24">
+      {/* Hero Section with Blurred Background - extends to top of page */}
+      <section className="relative bg-gradient-to-br from-[#65a8b0] to-[#d1dfe0] pt-32 pb-24 -mt-20">
           {/* Background image layer */}
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
@@ -113,149 +179,131 @@ const AchievementsPage = () => {
             </div>
           </div>
         </section>
-      </div>
 
       <main>
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Our Impact in Pictures</h2>
-              <p className="text-lg text-gray-700 max-w-4xl mx-auto">Explore our gallery showcasing the impact of our medical missions in South Sudan.</p>
-            </div>
-            <Carousel className="w-full max-w-5xl mx-auto">
-              <CarouselContent>
-                {galleryImages.map((image, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="m-1 h-full">
-                      <img src={image.src} alt={image.alt} className="w-full h-48 object-cover" />
-                      <CardContent>
-                        <p className="text-sm text-gray-600">{image.caption}</p>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center mt-4 gap-2">
-                <CarouselPrevious />
-                <CarouselNext />
-              </div>
-            </Carousel>
+        <section className="py-12 md:py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Our Impact Areas</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 text-center max-w-3xl mx-auto mb-12">
+              Through our dedicated efforts, we've created meaningful change across several key areas in South Sudan.
+            </p>
+            
+            <InteractiveCarousel 
+              items={[
+                {
+                  icon: <Stethoscope className="w-6 h-6 text-blue-500" />,
+                  title: "Mobile Medical Clinics",
+                  description: "Bringing essential healthcare directly to remote villages, our mobile clinics have served over 300 patients with treatments, vaccinations, and health check-ups."
+                },
+                {
+                  icon: <Heart className="w-6 h-6 text-pink-500" />,
+                  title: "Maternal Health Services",
+                  description: "Supporting mothers through prenatal care, birth assistance, and postnatal support, reducing maternal and infant mortality rates."
+                },
+                {
+                  icon: <BookOpen className="w-6 h-6 text-purple-500" />,
+                  title: "Health Education",
+                  description: "Empowering communities with knowledge about hygiene, disease prevention, and healthy living practices."
+                },
+                {
+                  icon: <Users className="w-6 h-6 text-green-500" />,
+                  title: "Community Engagement",
+                  description: "Building relationships with local leaders and residents to ensure our programs meet real community needs."
+                },
+                {
+                  icon: <GraduationCap className="w-6 h-6 text-yellow-500" />,
+                  title: "Training Local Healthcare Workers",
+                  description: "Developing skills among local healthcare providers to create sustainable medical support systems."
+                },
+                {
+                  icon: <Briefcase className="w-6 h-6 text-indigo-500" />,
+                  title: "Women's Empowerment",
+                  description: "Creating opportunities for women through skills training, education, and economic initiatives."
+                }
+              ]}
+            />
           </div>
         </section>
 
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">Year 2023 - Major Milestones</h2>
-              <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-                With significant community support, we made major strides in healthcare and economic empowerment across South Sudan, touching hundreds of lives through targeted interventions.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-green-500 via-blue-500 to-orange-500 rounded-full hidden lg:block"></div>
-              <div className="space-y-16">
-                {/* 1. Mobile Clinics - Left Side */}
-                <div className="flex flex-col lg:flex-row items-center gap-4">
-                  <div className="w-full lg:w-1/2 lg:pr-4">
-                    <Card className="border-2 border-green-100 hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden rounded-xl">
-                      <div className="relative">
-                        <img src={placeholderImage1} alt="Large community gathering for mobile clinic services" className="h-48 w-full object-cover" />
-                        <div className="absolute top-3 right-3 bg-green-600 p-2 rounded-full">
-                          <Stethoscope className="h-5 w-5 text-white" />
-                        </div>
-                      </div>
-                      <CardContent>
-                        <h3 className="text-xl font-bold text-green-600 mb-2">Mobile Clinics</h3>
-                        <ul className="space-y-1 text-gray-700">
-                          <li>• Implemented 2 mobile clinics (April & August)</li>
-                          <li>• Served 300+ patients across 5 remote villages</li>
-                          <li>• Provided vaccinations, prenatal care, and general consultations</li>
-                          <li>• Distributed essential medications and hygiene kits</li>
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  <div className="hidden lg:block w-6 h-6 rounded-full bg-green-600 border-4 border-white shadow-lg z-10"></div>
-                  <div className="w-full lg:w-1/2 lg:pl-4"></div>
+        <section className="pb-0">
+          <ImagesSlider 
+            className="h-[50rem]" 
+            images={sliderImages}
+            onSlideChange={handleSlideChange}
+          >
+            <motion.div
+              key={currentSlide}
+              initial={{
+                opacity: 0,
+                y: -80,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+              className="z-50 flex flex-col justify-center items-center px-4"
+            >
+              <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+                {slideContent[currentSlide].title} <br /> {slideContent[currentSlide].subtitle}
+              </motion.p>
+              <motion.p 
+                className="text-lg md:text-xl text-center text-white/90 max-w-4xl mx-auto mb-8 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                {slideContent[currentSlide].description}
+              </motion.p>
+              
+              {/* Current slide details */}
+              <motion.div 
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 max-w-2xl mx-auto mb-8"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <div className="flex items-center justify-center mb-4">
+                  {React.createElement(slideContent[currentSlide].icon, {
+                    className: `w-10 h-10 text-${slideContent[currentSlide].color} mx-auto`
+                  })}
                 </div>
+                <h3 className="text-white font-bold text-xl text-center mb-2">{slideContent[currentSlide].stats}</h3>
+                <div className="space-y-2">
+                  {slideContent[currentSlide].details.map((detail, index) => (
+                    <motion.p 
+                      key={index}
+                      className="text-white/90 text-sm text-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 0.7 + (index * 0.1) }}
+                    >
+                      • {detail}
+                    </motion.p>
+                  ))}
+                </div>
+              </motion.div>
 
-                {/* 2. Maternal Services - Right Side */}
-                <div className="flex flex-col lg:flex-row items-center gap-4">
-                  <div className="w-full lg:w-1/2 lg:pr-4 order-2 lg:order-2"></div>
-                  <div className="hidden lg:block w-6 h-6 rounded-full bg-pink-500 border-4 border-white shadow-lg z-10 order-1 lg:order-1"></div>
-                  <div className="w-full lg:w-1/2 lg:pl-4 order-1 lg:order-3">
-                    <Card className="border-2 border-pink-100 hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden rounded-xl">
-                      <div className="relative">
-                        <img src={placeholderImage2} alt="Maternal health services being provided to women" className="h-48 w-full object-cover" />
-                        <div className="absolute top-3 right-3 bg-pink-500 p-2 rounded-full">
-                          <Heart className="h-5 w-5 text-white" />
-                        </div>
-                      </div>
-                      <CardContent>
-                        <h3 className="text-xl font-bold text-pink-500 mb-2">Maternal Services</h3>
-                        <ul className="space-y-1 text-gray-700">
-                          <li>• Trained 20 traditional birth attendants</li>
-                          <li>• Provided prenatal care to 50+ expectant mothers</li>
-                          <li>• Distributed clean birth kits and supplies</li>
-                          <li>• Conducted workshops on safe birthing practices</li>
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-
-                {/* 3. Health Education in Schools - Left Side */}
-                <div className="flex flex-col lg:flex-row items-center gap-4">
-                  <div className="w-full lg:w-1/2 lg:pr-4">
-                    <Card className="border-2 border-blue-100 hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden rounded-xl">
-                      <div className="relative">
-                        <img src={placeholderImage3} alt="Children in a classroom learning about health" className="h-48 w-full object-cover" />
-                        <div className="absolute top-3 right-3 bg-blue-600 p-2 rounded-full">
-                          <GraduationCap className="h-5 w-5 text-white" />
-                        </div>
-                      </div>
-                      <CardContent>
-                        <h3 className="text-xl font-bold text-blue-600 mb-2">Health Education in Schools</h3>
-                        <ul className="space-y-1 text-gray-700">
-                          <li>• Reached 2 schools and over 40 children</li>
-                          <li>• Taught basic hygiene and disease prevention</li>
-                          <li>• Distributed educational materials and hygiene supplies</li>
-                          <li>• Trained teachers on health education curriculum</li>
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  <div className="hidden lg:block w-6 h-6 rounded-full bg-blue-600 border-4 border-white shadow-lg z-10"></div>
-                  <div className="w-full lg:w-1/2 lg:pl-4"></div>
-                </div>
-
-                {/* 4. Women's Economic Empowerment - Right Side */}
-                <div className="flex flex-col lg:flex-row items-center gap-4">
-                  <div className="w-full lg:w-1/2 lg:pr-4 order-2 lg:order-2"></div>
-                  <div className="hidden lg:block w-6 h-6 rounded-full bg-orange-500 border-4 border-white shadow-lg z-10 order-1 lg:order-1"></div>
-                  <div className="w-full lg:w-1/2 lg:pl-4 order-1 lg:order-3">
-                    <Card className="border-2 border-orange-100 hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden rounded-xl">
-                      <div className="relative">
-                        <img src={placeholderImage4} alt="Women participating in economic empowerment program" className="h-48 w-full object-cover" />
-                        <div className="absolute top-3 right-3 bg-orange-500 p-2 rounded-full">
-                          <Briefcase className="h-5 w-5 text-white" />
-                        </div>
-                      </div>
-                      <CardContent>
-                        <h3 className="text-xl font-bold text-orange-500 mb-2">Women's Economic Empowerment</h3>
-                        <ul className="space-y-1 text-gray-700">
-                          <li>• Established 2 women's cooperatives</li>
-                          <li>• Trained 20+ women in business skills</li>
-                          <li>• Provided startup capital and materials</li>
-                          <li>• Created sustainable income opportunities</li>
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+              <motion.button 
+                className="px-6 py-3 backdrop-blur-sm border bg-emerald-300/10 border-emerald-500/20 text-white mx-auto text-center rounded-full relative mt-4 hover:bg-emerald-300/20 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/donate" className="flex items-center space-x-2">
+                  <span>Support Our Mission</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <div className="absolute inset-x-0 h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-emerald-500 to-transparent" />
+              </motion.button>
+            </motion.div>
+          </ImagesSlider>
         </section>
       </main>
     </div>

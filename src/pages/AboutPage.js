@@ -29,8 +29,8 @@ const AboutPage = () => {
   };
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#65a8b0] to-[#d1dfe0] py-24">
+      {/* Hero Section - extends to top of page */}
+      <section className="relative bg-gradient-to-br from-[#65a8b0] to-[#d1dfe0] pt-32 pb-24 -mt-20">
         <div
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: `url(${heroBackground})`, opacity: 0.6 }}

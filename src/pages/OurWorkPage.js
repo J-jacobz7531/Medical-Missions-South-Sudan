@@ -6,7 +6,7 @@ import ourworkBg from '../assets/images/background.jpg';
 import { Button } from '../components/ui/button';
 
 // Images are imported locally from assets folder
-import heroBgImage from '../assets/images/our-work-hero.png';
+
 import mobileClinicImg1 from '../assets/images/background.jpg';
 import mobileClinicImg2 from '../assets/images/background.jpg';
 import mobileClinicImg3 from '../assets/images/background.jpg';
@@ -67,9 +67,8 @@ const OurWorkPage = () => {
 
   return (
     <div className="min-h-screen">
-      <div>
-        {/* Hero Section with Blurred Background */}
-        <section className="relative bg-gradient-to-br from-blue-600/90 via-blue-800/10 to-indigo-600/90 text-white py-24">
+      {/* Hero Section with Blurred Background - extends to top of page */}
+      <section className="relative bg-gradient-to-br from-blue-600/90 via-blue-800/10 to-indigo-600/90 text-white pt-32 pb-24 -mt-20">
           {/* Background image layer */}
           <div
             className="absolute inset-0 bg-cover bg-center z-0"
@@ -242,7 +241,6 @@ const OurWorkPage = () => {
             </Link>
           </div>
         </section>
-      </div>
     </div>
   );
 };

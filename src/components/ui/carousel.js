@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, Children, cloneElement } from 'react';
+import React from 'react';
 
 const Carousel = ({ children, className = "", ...props }) => {
   return (

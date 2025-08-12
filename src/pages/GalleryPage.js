@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Dialog, DialogContent } from '../components/ui/dialog';
@@ -181,8 +181,8 @@ const GalleryPage = () => {
       
       <div className="relative z-10">
         <div className="pt">
-          {/* Impact-Focused Hero Section (Code remains the same) */}
-          <section className="bg-gradient-to-br from-blue-600/90 via-blue-800/10 to-indigo-600/90 text-white py-24">
+          {/* Impact-Focused Hero Section - extends to top of page */}
+          <section className="bg-gradient-to-br from-blue-600/90 via-blue-800/10 to-indigo-600/90 text-white pt-32 pb-24 -mt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
                 <div className="flex items-center justify-center gap-3 mb-8">

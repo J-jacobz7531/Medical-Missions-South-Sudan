@@ -1,33 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useCMSContent } from '../hooks/useCMSContent';
 import homeBg from '../assets/images/background.jpg';
 
 const Hero = () => {
-  const { getHeroContent, loading } = useCMSContent();
-  const heroContent = getHeroContent('home');
   // Animation variants
-  const heartIconVariants = {
-    initial: { scale: 0, opacity: 0 },
-    animate: { 
-      scale: 1, 
-      opacity: 1,
-      transition: { 
-        type: 'spring', 
-        stiffness: 260, 
-        damping: 20,
-        delay: 0.2 
-      } 
-    },
-    hover: { 
-      scale: 1.1,
-      transition: { 
-        yoyo: Infinity, 
-        duration: 0.8 
-      } 
-    }
-  };
 
   const headingVariants = {
     initial: { opacity: 0, y: 20 },
@@ -84,7 +61,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-br from-[#65a8b0] to-[#d1dfe0]">
+    <section className="relative pt-32 pb-24 -mt-20 overflow-hidden bg-gradient-to-br from-[#65a8b0] to-[#d1dfe0]">
       {/* Background image with overlay and blur */}
       <div 
         className="absolute inset-0 bg-cover bg-center z-0"
@@ -120,7 +97,7 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          {loading ? 'Make a Difference Today' : heroContent.title || 'Make a Difference Today'}
+          Healing Nations
         </motion.h1>
         
         <motion.p 
@@ -129,7 +106,7 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          {loading ? 'Your donation directly supports life-changing healthcare programs in South Sudan\'s most underserved communities.' : heroContent.subtitle || 'Your donation directly supports life-changing healthcare programs in South Sudan\'s most underserved communities.'}
+          Providing essential healthcare services and humanitarian aid to vulnerable communities in South Sudan
         </motion.p>
         
         {/* CTA Buttons */}

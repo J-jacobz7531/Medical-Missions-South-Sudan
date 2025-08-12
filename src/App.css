@@ -5,6 +5,7 @@
 
 /* --- Google Font --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
 /* --- Custom CSS Variables for legacy compatibility --- */
 :root {
@@ -27,7 +28,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
     line-height: 1.6;
     color: var(--gray-text);
     background-color: #ffffff;
@@ -82,13 +83,6 @@ a {
     background-color: var(--primary-red);
     color: #fff;
     border: 1px solid var(--primary-red);
-}
-
-.btn-signin {
-    background-color: #fff;
-    color: var(--primary-red);
-    border: 1px solid var(--primary-red);
-    margin-left: 10px;
 }
 
 .btn-secondary {
